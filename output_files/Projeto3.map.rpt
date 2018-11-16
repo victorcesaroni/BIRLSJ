@@ -1,0 +1,703 @@
+Analysis & Synthesis report for Projeto3
+Tue Nov 29 17:45:57 2016
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: REG32_DESCIDA:PC0
+ 13. Parameter Settings for User Entity Instance: INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0
+ 14. Parameter Settings for User Entity Instance: REGISTERS:REGISTERS0
+ 15. Parameter Settings for User Entity Instance: DATAMEMORY:DATAMEMORY0
+ 16. Port Connectivity Checks: "MUX32_2_1:MUXADDER0"
+ 17. Port Connectivity Checks: "RegistradorEX:RegistradorEX_0"
+ 18. Port Connectivity Checks: "ADDER:ADDERPC0"
+ 19. Port Connectivity Checks: "REG32_DESCIDA:PC0"
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Nov 29 17:45:57 2016       ;
+; Quartus Prime Version       ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Revision Name               ; Projeto3                                    ;
+; Top-level Entity Name       ; Projeto3_V2                                 ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 6,480                                       ;
+; Total pins                  ; 1,345                                       ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; Projeto3_V2        ; Projeto3           ;
+; Family name                                                                ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; MUX32_2_1.vhd                    ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX32_2_1.vhd         ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd               ;         ;
+; ADDER.vhd                        ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ADDER.vhd             ;         ;
+; DATAMEMORY.vhd                   ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/DATAMEMORY.vhd        ;         ;
+; INSTRUCTIONMEMORY.vhd            ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/INSTRUCTIONMEMORY.vhd ;         ;
+; EXTENSOR.vhd                     ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/EXTENSOR.vhd          ;         ;
+; ALUControl.vhd                   ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd        ;         ;
+; RegistradorIF_ID.vhd             ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd  ;         ;
+; RegistradorID_EX.vhd             ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorID_EX.vhd  ;         ;
+; RegistradorEX.vhd                ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX.vhd     ;         ;
+; RegistradorEX_MEM.vhd            ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX_MEM.vhd ;         ;
+; RegistradorMEM.vhd               ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM.vhd    ;         ;
+; RegistradorMEM_WB.vhd            ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM_WB.vhd ;         ;
+; RegistradorWB.vhd                ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorWB.vhd     ;         ;
+; REGISTERS.vhd                    ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd         ;         ;
+; REG32_DESCIDA.vhd                ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REG32_DESCIDA.vhd     ;         ;
+; CONTROL.vhd                      ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd           ;         ;
+; Projeto3_V2.vhd                  ; yes             ; User VHDL File  ; C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 6480  ;
+;     -- Combinational with no register       ; 2995  ;
+;     -- Register only                        ; 3270  ;
+;     -- Combinational with a register        ; 215   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 2818  ;
+;     -- 3 input functions                    ; 315   ;
+;     -- 2 input functions                    ; 76    ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 6356  ;
+;     -- arithmetic mode                      ; 124   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 64    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 3485  ;
+; Total logic cells in carry chains           ; 128   ;
+; I/O pins                                    ; 1345  ;
+; Maximum fan-out node                        ; CLOCK ;
+; Maximum fan-out                             ; 3485  ;
+; Total fan-out                               ; 23669 ;
+; Average fan-out                             ; 3.02  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                               ; Library Name ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+--------------+
+; |Projeto3_V2                              ; 6480 (1)    ; 3485         ; 0          ; 1345 ; 0            ; 2995 (1)     ; 3270 (0)          ; 215 (0)          ; 128 (0)         ; 0 (0)      ; |Projeto3_V2                                      ; work         ;
+;    |ALU:ALU0|                             ; 122 (122)   ; 0            ; 0          ; 0    ; 0            ; 122 (122)    ; 0 (0)             ; 0 (0)            ; 64 (64)         ; 0 (0)      ; |Projeto3_V2|ALU:ALU0                             ; work         ;
+;    |ALUControl:ALUControl0|               ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|ALUControl:ALUControl0               ; work         ;
+;    |CONTROL:CONTROL0|                     ; 64 (64)     ; 0            ; 0          ; 0    ; 0            ; 64 (64)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|CONTROL:CONTROL0                     ; work         ;
+;    |DATAMEMORY:DATAMEMORY0|               ; 3432 (3432) ; 2048         ; 0          ; 0    ; 0            ; 1384 (1384)  ; 2048 (2048)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|DATAMEMORY:DATAMEMORY0               ; work         ;
+;    |INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0| ; 98 (98)     ; 22           ; 0          ; 0    ; 0            ; 76 (76)      ; 0 (0)             ; 22 (22)          ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0 ; work         ;
+;    |MUX32_2_1:MUXADDER0|                  ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|MUX32_2_1:MUXADDER0                  ; work         ;
+;    |MUX32_2_1:MUXALU0|                    ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|MUX32_2_1:MUXALU0                    ; work         ;
+;    |MUX32_2_1:MUXMEMTOREG|                ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|MUX32_2_1:MUXMEMTOREG                ; work         ;
+;    |REG32_DESCIDA:PC0|                    ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 32 (32)         ; 0 (0)      ; |Projeto3_V2|REG32_DESCIDA:PC0                    ; work         ;
+;    |REGISTERS:REGISTERS0|                 ; 2264 (2264) ; 1024         ; 0          ; 0    ; 0            ; 1240 (1240)  ; 1024 (1024)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|REGISTERS:REGISTERS0                 ; work         ;
+;    |RegistradorEX:RegistradorEX_0|        ; 6 (6)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorEX:RegistradorEX_0        ; work         ;
+;    |RegistradorEX_MEM:RegistradorEX_MEM0| ; 102 (102)   ; 102          ; 0          ; 0    ; 0            ; 0 (0)        ; 37 (37)           ; 65 (65)          ; 32 (32)         ; 0 (0)      ; |Projeto3_V2|RegistradorEX_MEM:RegistradorEX_MEM0 ; work         ;
+;    |RegistradorID_EX:RegistradorID_EX0|   ; 116 (116)   ; 116          ; 0          ; 0    ; 0            ; 0 (0)        ; 52 (52)           ; 64 (64)          ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorID_EX:RegistradorID_EX0   ; work         ;
+;    |RegistradorIF_ID:RegistradorIF_ID0|   ; 54 (54)     ; 54           ; 0          ; 0    ; 0            ; 0 (0)        ; 54 (54)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorIF_ID:RegistradorIF_ID0   ; work         ;
+;    |RegistradorMEM:RegistradorMEM_0|      ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorMEM:RegistradorMEM_0      ; work         ;
+;    |RegistradorMEM:RegistradorMEM_1|      ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorMEM:RegistradorMEM_1      ; work         ;
+;    |RegistradorMEM_WB:RegistradorMEM_WB0| ; 69 (69)     ; 69           ; 0          ; 0    ; 0            ; 0 (0)        ; 37 (37)           ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorMEM_WB:RegistradorMEM_WB0 ; work         ;
+;    |RegistradorWB:RegistradorWB_0|        ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorWB:RegistradorWB_0        ; work         ;
+;    |RegistradorWB:RegistradorWB_1|        ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorWB:RegistradorWB_1        ; work         ;
+;    |RegistradorWB:RegistradorWB_2|        ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Projeto3_V2|RegistradorWB:RegistradorWB_2        ; work         ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; ALUControl:ALUControl0|operacao[1]                  ; ALUControl:ALUControl0|Mux11 ; yes                    ;
+; ALUControl:ALUControl0|operacao[0]                  ; ALUControl:ALUControl0|Mux11 ; yes                    ;
+; CONTROL:CONTROL0|AddSrc                             ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|RS_ADDR[1]                         ; CONTROL:CONTROL0|Mux21       ; yes                    ;
+; CONTROL:CONTROL0|RS_ADDR[0]                         ; CONTROL:CONTROL0|Mux21       ; yes                    ;
+; CONTROL:CONTROL0|RS_ADDR[3]                         ; CONTROL:CONTROL0|Mux21       ; yes                    ;
+; CONTROL:CONTROL0|RS_ADDR[2]                         ; CONTROL:CONTROL0|Mux21       ; yes                    ;
+; CONTROL:CONTROL0|RS_ADDR[4]                         ; CONTROL:CONTROL0|Mux21       ; yes                    ;
+; CONTROL:CONTROL0|ImmedOrReg                         ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|Branch                             ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|Jump                               ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|RT_ADDR[1]                         ; CONTROL:CONTROL0|Mux10       ; yes                    ;
+; CONTROL:CONTROL0|RT_ADDR[0]                         ; CONTROL:CONTROL0|Mux10       ; yes                    ;
+; CONTROL:CONTROL0|RT_ADDR[2]                         ; CONTROL:CONTROL0|Mux10       ; yes                    ;
+; CONTROL:CONTROL0|RT_ADDR[3]                         ; CONTROL:CONTROL0|Mux10       ; yes                    ;
+; CONTROL:CONTROL0|RT_ADDR[4]                         ; CONTROL:CONTROL0|Mux10       ; yes                    ;
+; CONTROL:CONTROL0|ALUSrc                             ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|MemWrite                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|MemtoReg                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|RD_ADDR[3]                         ; CONTROL:CONTROL0|Mux33       ; yes                    ;
+; CONTROL:CONTROL0|RD_ADDR[4]                         ; CONTROL:CONTROL0|Mux33       ; yes                    ;
+; CONTROL:CONTROL0|RegWrite                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|RD_ADDR[0]                         ; CONTROL:CONTROL0|Mux33       ; yes                    ;
+; CONTROL:CONTROL0|RD_ADDR[1]                         ; CONTROL:CONTROL0|Mux33       ; yes                    ;
+; CONTROL:CONTROL0|RD_ADDR[2]                         ; CONTROL:CONTROL0|Mux33       ; yes                    ;
+; CONTROL:CONTROL0|ALUOp[1]                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|ALUOp[0]                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; CONTROL:CONTROL0|ALUOp[2]                           ; CONTROL:CONTROL0|Mux51       ; yes                    ;
+; Number of user-specified and inferred latches = 28  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                     ;
++-------------------------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                                                 ; Reason for Removal                                                     ;
++-------------------------------------------------------------------------------+------------------------------------------------------------------------+
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[0]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[0]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[1]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[1]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[2]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[2]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[3]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[3]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[4]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[4]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[5]                     ; Merged with RegistradorID_EX:RegistradorID_EX0|FUNCT_OUT[5]            ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[18..31]                ; Merged with RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[17] ;
+; INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0|INSTRUCAO_INTERNA[6,7,9..12,16,17,21,27] ; Merged with INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0|INSTRUCAO_INTERNA[22] ;
+; RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[7,9..12,16,17,21,22,27]      ; Merged with RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[6]        ;
+; RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[7,9..12,16,17]         ; Merged with RegistradorID_EX:RegistradorID_EX0|sinal_extendido_out[6]  ;
+; Total Number of Removed Registers = 47                                        ;                                                                        ;
++-------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3485  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3072  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Projeto3_V2|RegistradorID_EX:RegistradorID_EX0|read_data_1_out[17] ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |Projeto3_V2|RegistradorID_EX:RegistradorID_EX0|read_data_2_out[18] ;
+; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; Yes        ; |Projeto3_V2|RegistradorMEM_WB:RegistradorMEM_WB0|read_data_out[5]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Projeto3_V2|CONTROL:CONTROL0|Mux37                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Projeto3_V2|ALU:ALU0|Mux1                                          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Projeto3_V2|CONTROL:CONTROL0|Mux35                                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Projeto3_V2|CONTROL:CONTROL0|Mux40                                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; No         ; |Projeto3_V2|CONTROL:CONTROL0|Mux30                                 ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; No         ; |Projeto3_V2|CONTROL:CONTROL0|Mux11                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: REG32_DESCIDA:PC0 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                           ;
+; M              ; 64    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: REGISTERS:REGISTERS0 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; N              ; 32    ; Signed Integer                           ;
+; M              ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATAMEMORY:DATAMEMORY0 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; n              ; 32    ; Signed Integer                             ;
+; M              ; 64    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "MUX32_2_1:MUXADDER0" ;
++-----------+-------+----------+------------------+
+; Port      ; Type  ; Severity ; Details          ;
++-----------+-------+----------+------------------+
+; entrada_1 ; Input ; Info     ; Stuck at GND     ;
++-----------+-------+----------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RegistradorEX:RegistradorEX_0"                                                            ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; regdst_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "ADDER:ADDERPC0"         ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; entrada_1[31..1] ; Input ; Info     ; Stuck at GND ;
+; entrada_1[0]     ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "REG32_DESCIDA:PC0" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; reg_in ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Tue Nov 29 17:45:38 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto3 -c Projeto3
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file mux32_2_1.vhd
+    Info (12022): Found design unit 1: MUX32_2_1-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX32_2_1.vhd Line: 13
+    Info (12023): Found entity 1: MUX32_2_1 File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX32_2_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 14
+    Info (12023): Found entity 1: ALU File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: ADDER-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ADDER.vhd Line: 12
+    Info (12023): Found entity 1: ADDER File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ADDER.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datamemory.vhd
+    Info (12022): Found design unit 1: DATAMEMORY-behaviour File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/DATAMEMORY.vhd Line: 30
+    Info (12023): Found entity 1: DATAMEMORY File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/DATAMEMORY.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file reg32.vhd
+    Info (12022): Found design unit 1: REG32-Behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REG32.vhd Line: 15
+    Info (12023): Found entity 1: REG32 File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REG32.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file instructionmemory.vhd
+    Info (12022): Found design unit 1: INSTRUCTIONMEMORY-Behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/INSTRUCTIONMEMORY.vhd Line: 18
+    Info (12023): Found entity 1: INSTRUCTIONMEMORY File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/INSTRUCTIONMEMORY.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file extensor.vhd
+    Info (12022): Found design unit 1: EXTENSOR-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/EXTENSOR.vhd Line: 13
+    Info (12023): Found entity 1: EXTENSOR File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/EXTENSOR.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alucontrol.vhd
+    Info (12022): Found design unit 1: ALUControl-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 15
+    Info (12023): Found entity 1: ALUControl File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorif_id.vhd
+    Info (12022): Found design unit 1: RegistradorIF_ID-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 15
+    Info (12023): Found entity 1: RegistradorIF_ID File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorid_ex.vhd
+    Info (12022): Found design unit 1: RegistradorID_EX-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorID_EX.vhd Line: 25
+    Info (12023): Found entity 1: RegistradorID_EX File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorID_EX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorex.vhd
+    Info (12022): Found design unit 1: RegistradorEX-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX.vhd Line: 23
+    Info (12023): Found entity 1: RegistradorEX File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorex_mem.vhd
+    Info (12022): Found design unit 1: RegistradorEX_MEM-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX_MEM.vhd Line: 22
+    Info (12023): Found entity 1: RegistradorEX_MEM File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX_MEM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradormem.vhd
+    Info (12022): Found design unit 1: RegistradorMEM-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM.vhd Line: 21
+    Info (12023): Found entity 1: RegistradorMEM File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradormem_wb.vhd
+    Info (12022): Found design unit 1: RegistradorMEM_WB-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM_WB.vhd Line: 18
+    Info (12023): Found entity 1: RegistradorMEM_WB File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorMEM_WB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorwb.vhd
+    Info (12022): Found design unit 1: RegistradorWB-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorWB.vhd Line: 17
+    Info (12023): Found entity 1: RegistradorWB File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorWB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
+    Info (12022): Found design unit 1: REGISTERS-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 57
+    Info (12023): Found entity 1: REGISTERS File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file reg32_descida.vhd
+    Info (12022): Found design unit 1: REG32_DESCIDA-Behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REG32_DESCIDA.vhd Line: 15
+    Info (12023): Found entity 1: REG32_DESCIDA File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REG32_DESCIDA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: CONTROL-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 28
+    Info (12023): Found entity 1: CONTROL File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux32_3_1.vhd
+    Info (12022): Found design unit 1: MUX32_3_1-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX32_3_1.vhd Line: 14
+    Info (12023): Found entity 1: MUX32_3_1 File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX32_3_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux5_2_1.vhd
+    Info (12022): Found design unit 1: MUX5_2_1-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX5_2_1.vhd Line: 13
+    Info (12023): Found entity 1: MUX5_2_1 File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/MUX5_2_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file projeto3_v2.vhd
+    Info (12022): Found design unit 1: Projeto3_V2-arch File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 90
+    Info (12023): Found entity 1: Projeto3_V2 File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 5
+Info (12127): Elaborating entity "Projeto3_V2" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Projeto3_V2.vhd(406): object "RegDST_EX" assigned a value but never read File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 406
+Info (12128): Elaborating entity "REG32_DESCIDA" for hierarchy "REG32_DESCIDA:PC0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 451
+Info (12128): Elaborating entity "ADDER" for hierarchy "ADDER:ADDERPC0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 461
+Info (12128): Elaborating entity "MUX32_2_1" for hierarchy "MUX32_2_1:MUXPC0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 470
+Info (12128): Elaborating entity "INSTRUCTIONMEMORY" for hierarchy "INSTRUCTIONMEMORY:INSTRUCTIONMEMORY0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 480
+Info (12128): Elaborating entity "RegistradorIF_ID" for hierarchy "RegistradorIF_ID:RegistradorIF_ID0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 489
+Info (12128): Elaborating entity "EXTENSOR" for hierarchy "EXTENSOR:EXTENSORIMMED0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 503
+Info (12128): Elaborating entity "REGISTERS" for hierarchy "REGISTERS:REGISTERS0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 512
+Warning (10492): VHDL Process Statement warning at REGISTERS.vhd(74): signal "REGS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at REGISTERS.vhd(74): signal "READ0_ADDR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at REGISTERS.vhd(75): signal "REGS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at REGISTERS.vhd(75): signal "READ1_ADDR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/REGISTERS.vhd Line: 75
+Info (12128): Elaborating entity "CONTROL" for hierarchy "CONTROL:CONTROL0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 558
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "RegWrite", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "ALUSrc", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "ALUOp", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "RegDst", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "MemWrite", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "MemRead", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "MemtoReg", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "Branch", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "AddSrc", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "Jump", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "ImmedOrReg", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "RD_ADDR", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "RS_ADDR", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(30): inferring latch(es) for signal or variable "RT_ADDR", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RT_ADDR[0]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RT_ADDR[1]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RT_ADDR[2]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RT_ADDR[3]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RT_ADDR[4]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RS_ADDR[0]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RS_ADDR[1]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RS_ADDR[2]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RS_ADDR[3]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RS_ADDR[4]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RD_ADDR[0]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RD_ADDR[1]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RD_ADDR[2]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RD_ADDR[3]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RD_ADDR[4]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "ImmedOrReg" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "Jump" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "AddSrc" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "Branch" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "MemtoReg" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "MemRead" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "MemWrite" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RegDst" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "ALUOp[0]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "ALUOp[1]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "ALUOp[2]" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "ALUSrc" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (10041): Inferred latch for "RegWrite" at CONTROL.vhd(30) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Info (12128): Elaborating entity "RegistradorID_EX" for hierarchy "RegistradorID_EX:RegistradorID_EX0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 582
+Info (12128): Elaborating entity "RegistradorEX" for hierarchy "RegistradorEX:RegistradorEX_0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 603
+Info (12128): Elaborating entity "RegistradorMEM" for hierarchy "RegistradorMEM:RegistradorMEM_0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 621
+Info (12128): Elaborating entity "RegistradorWB" for hierarchy "RegistradorWB:RegistradorWB_0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 636
+Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ALUControl0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 690
+Warning (10631): VHDL Process Statement warning at ALUControl.vhd(18): inferring latch(es) for signal or variable "operacao", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+Info (10041): Inferred latch for "operacao[0]" at ALUControl.vhd(18) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+Info (10041): Inferred latch for "operacao[1]" at ALUControl.vhd(18) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+Info (10041): Inferred latch for "operacao[2]" at ALUControl.vhd(18) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 699
+Warning (10631): VHDL Process Statement warning at ALU.vhd(27): inferring latch(es) for signal or variable "RESULT", which holds its previous value in one or more paths through the process File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[0]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[1]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[2]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[3]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[4]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[5]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[6]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[7]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[8]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[9]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[10]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[11]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[12]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[13]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[14]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[15]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[16]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[17]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[18]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[19]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[20]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[21]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[22]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[23]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[24]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[25]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[26]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[27]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[28]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[29]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[30]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (10041): Inferred latch for "RESULT[31]" at ALU.vhd(27) File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (12128): Elaborating entity "RegistradorEX_MEM" for hierarchy "RegistradorEX_MEM:RegistradorEX_MEM0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 711
+Info (12128): Elaborating entity "DATAMEMORY" for hierarchy "DATAMEMORY:DATAMEMORY0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 758
+Warning (10492): VHDL Process Statement warning at DATAMEMORY.vhd(42): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/DATAMEMORY.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at DATAMEMORY.vhd(42): signal "address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/DATAMEMORY.vhd Line: 42
+Info (12128): Elaborating entity "RegistradorMEM_WB" for hierarchy "RegistradorMEM_WB:RegistradorMEM_WB0" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/Projeto3_V2.vhd Line: 781
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[0]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[1]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[2]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[3]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[4]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[5]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[6]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[7]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[8]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[9]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[10]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[11]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[12]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[13]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[14]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[15]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[16]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[17]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[18]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[19]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[20]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[21]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[22]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[23]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[24]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[25]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[26]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[27]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[28]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[29]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[30]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[31]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[5]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[4]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[3]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[2]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[1]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[0]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[6]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[7]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[8]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[9]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[10]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[11]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[12]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[13]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[14]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[15]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[16]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[17]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[18]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[19]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[20]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[21]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[22]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[23]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[24]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[25]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[26]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[27]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[28]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[29]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[30]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Warning (14026): LATCH primitive "ALU:ALU0|RESULT[31]" is permanently enabled File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALU.vhd Line: 27
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "CONTROL:CONTROL0|RT_ADDR[4]" merged with LATCH primitive "CONTROL:CONTROL0|RT_ADDR[3]" File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+Warning (13012): Latch ALUControl:ALUControl0|operacao[1] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorEX:RegistradorEX_0|ALUOp_out[1] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX.vhd Line: 27
+Warning (13012): Latch ALUControl:ALUControl0|operacao[0] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/ALUControl.vhd Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorEX:RegistradorEX_0|ALUOp_out[0] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorEX.vhd Line: 27
+Warning (13012): Latch CONTROL:CONTROL0|AddSrc has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RS_ADDR[1] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[29] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RS_ADDR[0] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[29] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RS_ADDR[3] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[31] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RS_ADDR[2] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[29] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RS_ADDR[4] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[31] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|ImmedOrReg has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[31] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|Branch has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 16
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[28] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|Jump has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 23
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RT_ADDR[1] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RT_ADDR[0] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RT_ADDR[2] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|ALUSrc has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[31] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|MemWrite has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[28] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|MemtoReg has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 15
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[28] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|RegWrite has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[31] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|ALUOp[1] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|ALUOp[0] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Warning (13012): Latch CONTROL:CONTROL0|ALUOp[2] has unsafe behavior File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/CONTROL.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RegistradorIF_ID:RegistradorIF_ID0|instrucao_out[30] File: C:/Users/victor030916/Documents/Arquitetura de Computadores Pratica/Projeto3/RegistradorIF_ID.vhd Line: 19
+Info (21057): Implemented 7825 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 1344 output pins
+    Info (21061): Implemented 6480 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 130 warnings
+    Info: Peak virtual memory: 831 megabytes
+    Info: Processing ended: Tue Nov 29 17:45:57 2016
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:38
+
+

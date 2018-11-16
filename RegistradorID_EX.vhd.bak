@@ -1,0 +1,40 @@
+library ieee ;
+	use ieee.std_logic_1164.all ;
+	use ieee.numeric_std.all ;
+
+entity RegistradorID_EX is
+  port ( read_data_1 : in std_logic_vector(31 downto 0) ;
+			read_data_2 : in std_logic_vector(31 downto 0) ;
+			sinal_extendido : in std_logic_vector(31 downto 0) ; -- imediato
+			rt_22_18 : in std_logic_vector(4 downto 0) ; -- rt
+			rd_27_23 : in std_logic_vector(4 downto 0) ; -- rd
+			pc			 : in std_logic_vector(31 downto 0) ;
+			opcode	 : in std_logic_vector(3 downto 0) ;
+			clock		 : in std_logic;
+			read_data_1_out	 : out std_logic_vector(31 downto 0);
+			read_data_2_out	 : out std_logic_vector(31 downto 0);
+			sinal_extendido_out	 : out std_logic_vector(31 downto 0);
+			rt_22_18_out : out std_logic_vector(4 downto 0) ; -- rt
+			rd_27_23_out : out std_logic_vector(4 downto 0) ; -- rd
+			opcode_out	 : out std_logic_vector(3 downto 0); 
+			pc_out	 : out std_logic_vector(31 downto 0)
+  ) ;
+  
+end RegistradorID_EX; -- uc
+
+architecture arch of RegistradorID_EX is
+	begin
+		process(clock)
+			begin	
+			if clock'Event AND clock = '0' then
+				pc_out <= pc;
+				read_data_1_out <= read_data_1;
+				read_data_2_out <= read_data_2;
+				sinal_extendido_out <= sinal_extendido;
+				rt_22_18_out <= rt_22_18;
+				rd_27_23_out <= rd_27_23;
+				opcode_out <= opcode;
+				
+			end if;
+		end process;
+end architecture ; -- arch
